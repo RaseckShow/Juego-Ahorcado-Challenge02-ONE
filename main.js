@@ -6,6 +6,7 @@ let letras = [];
 let errores = 6;
 function IniciarJuego()
 {
+    errores = 6;
     AlternarElementosNuevoJuego();
     SeleccionarPalabra();
     DibujarCanvas();

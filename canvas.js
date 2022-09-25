@@ -43,7 +43,7 @@ function DibujarGuiones()
     for(let i = 0; i < palabraSeleccionada.length; i++)
     {
         tablero.moveTo(400 + (ancho * i), 250);
-        tablero.lineTo(450 + (ancho * i), 250);
+        tablero.lineTo(440 + (ancho * i), 250);
     }
     tablero.stroke();
     tablero.closePath();
