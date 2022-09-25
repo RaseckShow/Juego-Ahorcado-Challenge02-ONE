@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Juego Del Ahorcado - Challenge 02</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <div class="logo">
+                <img src="imagenes/logoBlanco.png" alt="logo Alura" id="logoEncabezado">
+            </div>
+        </header>
+        
+        <main>
+            <section id="menuPrincipal">
+                <a href="#horca"></a>
+                <input type="submit"  id="btnIniciar" value="Iniciar Juego" class="botonIniciar" onclick="IniciarJuego()">
+                <input type="submit" id="btnAgregar" value="Agregar Palabra" class="botonAgregar"onclick="AgregarPalabra()">
+                
+            </section>
+            <section class="dibujoAhorcado">
+                <canvas id="horca" width="1160" height="300"></canvas>
+            </section>
+        </main>
+        
+        <footer>
+            <p class="copyright">&copy Copyright ~ Dev Cesar Navarro - 2022</p>
+        </footer>
+        <script src="main.js"></script>
+        <script src="canvas.js"></script>
+    </body>
+</html>
+
+

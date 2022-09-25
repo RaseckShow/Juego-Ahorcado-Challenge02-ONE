@@ -1,0 +1,254 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+header{
+    background: linear-gradient(#1B2A36 90%, #7BC3F5);
+    padding: 10px 25px;
+    height: 70px;   
+}
+main{
+    width: auto;
+    padding: 20px 50px;
+    background-color: #7BC3F5;
+    height: 380px;
+}
+#menuPrincipal{
+    padding: 100px 150px;
+}
+#horca{
+    display: none;
+}
+.botonIniciar{
+    width: 50%;
+    display: block;
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #183036;
+    border: none;
+    border-radius: 20px;
+    transition: 1s all;
+    cursor: pointer;
+    
+    margin: 15px 0 15px 200px;
+}
+.botonAgregar{
+    width: 45%;
+    display: block;
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #50A2B5;
+    border-radius: 20px;
+    border: none;
+    border-color: #183036;
+    transition: 1s all;
+    cursor: pointer;
+    margin: 15px 0 15px 220px;
+
+}
+.botonIniciar:hover{
+    background-color: #38546d;
+    transform: scale(1.02);
+}
+.botonAgregar:hover{
+    background-color: #38696d;
+    transform: scale(1.02);
+}
+.botonIniciar:active{
+    background-color: aquamarine;
+}
+.botonAgregar:active{
+    background-color: aquamarine;
+}
+.mainAgregarPalabra{
+    width: auto;
+    padding: 20px;
+    background-color: #7BC3F5;
+    height: 360px;
+}
+#textAreaAgregarPalabra{
+    margin: 11px 350px;
+    font-size: 20px;
+    background-color: #7BC3F5;
+    resize: none;
+    border: none;
+    outline: none;
+}
+#textAreaAgregarPalabra::placeholder{
+    color: aliceblue;
+
+}
+.requisitos{
+    margin: 0 325px;
+    display: block;
+    font-style: italic;
+    font-weight: bolder;
+}
+.botonGuardar{
+    width: 30%;
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #183036;
+    border: none;
+    border-radius: 20px;
+    transition: 1s all;
+    cursor: pointer;
+    
+    margin: 15px 0 15px 200px;
+}
+.botonCancelar{
+    width: 30%;
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #50A2B5;
+    border-radius: 20px;
+    border: none;
+    border-color: #183036;
+    transition: 1s all;
+    cursor: pointer;
+    margin: 15px 0 15px 110px;
+
+}
+.botonGuardar:hover{
+    background-color: #38546d;
+    transform: scale(1.02);
+}
+.botonCancelar:hover{
+    background-color: #38696d;
+    transform: scale(1.02);
+}
+.botonGuardar:active{
+    background-color: aquamarine;
+}
+.botonCancelar:active{
+    background-color: aquamarine;
+}   
+.botonJugarAgain{
+    width: 30%;
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #183036;
+    border: none;
+    border-radius: 20px;
+    transition: 1s all;
+    cursor: pointer;
+    
+    margin: 15px 0 15px 200px;
+}
+.botonRendirse{
+    width: 30%;
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #50A2B5;
+    border-radius: 20px;
+    border: none;
+    border-color: #183036;
+    transition: 1s all;
+    cursor: pointer;
+    margin: 15px 0 15px 110px;
+
+}
+.botonJugarAgain:hover{
+    background-color: #38546d;
+    transform: scale(1.02);
+}
+.botonRendirse:hover{
+    background-color: #38696d;
+    transform: scale(1.02);
+}
+.botonJugarAgain:active{
+    background-color: aquamarine;
+}
+.botonRendirse:active{
+    background-color: aquamarine;
+}
+footer{
+    width: auto;
+    height: 21px;
+    background: linear-gradient(#3B5D75,#1B2A36);
+    text-align: center;
+    padding: 19px;   
+}
+.copyright{
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: 5px;
+}
+
+
+@media screen and (max-width:480px) {
+
+    .contenidoElementos{
+        height: 1150px;
+    }
+    .panelDerecho, .panelDerecho, .botones{
+        display: block;
+        width: auto;
+    }
+    .panelDerecho, .panelIzquierdo{
+        width: 100%;
+        height: 400px;
+    
+        position: relative;
+        margin: 10% 0;
+    }
+    .botonEncriptar, .botonDesencriptar, .requisitosTexto{
+        display: block;
+        margin: 5%;
+        width: 100%;
+    }
+    #imagenMostrarMensaje{
+        display: none;
+    }
+    #textAreaMostrarMensaje{
+        margin: 0 10%;
+    }
+}
+@media screen and (min-width: 481px) and (max-width:900px) {
+
+    .contenidoElementos{
+        height: 1250px;
+    }
+    .panelDerecho, .panelDerecho, .botones{
+        display: block;
+        width: 90%;
+    }
+    .panelDerecho, .panelIzquierdo{
+        width: 100%;
+        height: 400px;
+    
+        position: relative;
+        margin: 10% 0;
+    }
+    .requisitosTexto{
+        margin: 2% 5%;
+        width: 10% 40%;
+        display: block;
+    }
+    .botonEncriptar, .botonDesencriptar{
+        display: inline-block;
+        margin: 0 5%;
+        width: 35%;
+    }
+    .elementosNoEncontrado{
+        width: 99%;
+    }
+    #imagenMostrarMensaje{
+        display: none;
+    }
+    #textAreaMostrarMensaje{
+        margin: 0 10%;
+        padding: 2%;
+    }
+}
