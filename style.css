@@ -15,7 +15,11 @@ main{
 #menuPrincipal{
     padding: 100px 150px;
 }
-#horca{
+#agregandoPalabra{
+    display: none;
+    width: 1190px;
+}
+#horca, #btnRendirse, #btnNuevoJuego{
     display: none;
 }
 .botonIniciar{
@@ -64,13 +68,14 @@ main{
     background-color: aquamarine;
 }
 .mainAgregarPalabra{
-    width: auto;
+    width: 380px;
     padding: 20px;
     background-color: #7BC3F5;
-    height: 360px;
+    height: 340px;
 }
 #textAreaAgregarPalabra{
-    margin: 11px 350px;
+    width: auto;
+    margin: 5px 0 5px 344px;
     font-size: 20px;
     background-color: #7BC3F5;
     resize: none;
@@ -130,7 +135,7 @@ main{
 .botonCancelar:active{
     background-color: aquamarine;
 }   
-.botonJugarAgain{
+.botonNuevoJuego{
     width: 30%;
     padding: 15px 10px;
     font-size: 18px;

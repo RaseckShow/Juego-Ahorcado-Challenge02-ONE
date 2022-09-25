@@ -6,7 +6,7 @@ let letras = [];
 let errores = 6;
 function IniciarJuego()
 {
-    OcultarElementos();
+    AlternarElementosNuevoJuego();
     SeleccionarPalabra();
     DibujarCanvas();
     DibujarGuiones();
@@ -54,7 +54,7 @@ function ComprobarLetras(key)
 }
 function AgregarPalabra()
 {
-    
+    AlternarElementosNuevaPalabra();
 }
 function SeleccionarPalabra()
 {
@@ -62,8 +62,22 @@ function SeleccionarPalabra()
     palabraSeleccionada = palabraSecreta;
     console.log(palabraSeleccionada)
 }
-function OcultarElementos()
+function AlternarElementosNuevoJuego()
 {
     document.getElementById("menuPrincipal").style.display = "none";
     document.getElementById("horca").style.display = "block";
+    document.getElementById("btnNuevoJuego").style.display = "inline";
+    document.getElementById("btnRendirse").style.display = "inline";
+}
+function MenuPrincipal() 
+{
+    document.getElementById("menuPrincipal").style.display = "inline";
+    document.getElementById("horca").style.display = "none";
+    document.getElementById("btnNuevoJuego").style.display = "none";
+    document.getElementById("btnRendirse").style.display = "none";
+}
+function AlternarElementosNuevaPalabra()
+{
+    document.getElementById("menuPrincipal").style.display = "none";
+    document.getElementById("agregandoPalabra").style.display ="block";
 }
