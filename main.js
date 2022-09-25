@@ -27,6 +27,7 @@ function IniciarJuego()
         {
             MostrarLetraIncorrecta(letra);
             EscribirLetraIncorrecta(letra, errores);
+            DibujarMuñeco();
         }
     }
 }
