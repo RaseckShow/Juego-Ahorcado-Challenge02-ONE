@@ -68,6 +68,8 @@ function AlternarElementosNuevoJuego()
     document.getElementById("horca").style.display = "block";
     document.getElementById("btnNuevoJuego").style.display = "inline";
     document.getElementById("btnRendirse").style.display = "inline";
+    document.getElementById("agregandoPalabra").style.display = "none";
+
 }
 function MenuPrincipal() 
 {
@@ -80,4 +82,11 @@ function AlternarElementosNuevaPalabra()
 {
     document.getElementById("menuPrincipal").style.display = "none";
     document.getElementById("agregandoPalabra").style.display ="block";
+}
+function GuardarYJugar()
+{
+    let palabraAgregada = document.getElementById("textAreaAgregarPalabra").value.toUpperCase();
+    palabrasAgregadas.push(palabraAgregada);
+    console.log(palabrasAgregadas);
+    IniciarJuego();
 }
