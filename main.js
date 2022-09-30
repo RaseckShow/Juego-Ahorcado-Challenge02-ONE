@@ -74,6 +74,8 @@ function AlternarElementosNuevoJuego()
 }
 function MenuPrincipal() 
 {
+    document.getElementById("menuPrincipal").style.margin = "20px 50px";
+    document.getElementById("menuPrincipal").style.padding = "100px 150px";
     document.getElementById("menuPrincipal").style.display = "inline";
     document.getElementById("horca").style.display = "none";
     document.getElementById("btnNuevoJuego").style.display = "none";
