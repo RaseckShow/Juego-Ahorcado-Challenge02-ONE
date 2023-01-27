@@ -7,33 +7,40 @@ header{
     padding: 15px;  
 }
 main{
-    width: auto;
-    padding: 20px 50px;
     background-color: #7BC3F5;
-    height: 72vh;
 }
-#menuPrincipal{
-    padding: 100px 150px;
+#menuPrincipal, #agregandoPalabra, #dibujoAhorcado{
+    height: 75.3vh;
+    padding: 10px;
 }
 .botonesMenuPrincipal{
+    margin-top: 7%;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50%;
     display: flex;
     flex-direction: column;
 }
-#agregandoPalabra{
-    display: none;
-    width: auto;
-}
-.dibujoAhorcado{
+#agregandoPalabra, .dibujoAhorcado{
     display: none;
 }
+
 .mensajePerdiste, .mensajeGanaste{
     display: none;
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
 }
+.botonesAgregandoPalabra, .botones{
+    display: flex;
+    margin-top: 3%;
+    justify-content: space-evenly;
+}
+.botones{
+
+}
 .botonIniciar{
-    width: 50%;
+    width: 30%;
     display: block;
     padding: 15px 10px;
     font-size: 18px;
@@ -44,11 +51,9 @@ main{
     border-radius: 20px;
     transition: 1s all;
     cursor: pointer;
-    
-    margin: 15px 0 15px 200px;
 }
 .botonAgregar{
-    width: 45%;
+    width: 25%;
     display: block;
     padding: 15px 10px;
     font-size: 18px;
@@ -60,8 +65,6 @@ main{
     border-color: #183036;
     transition: 1s all;
     cursor: pointer;
-    margin: 15px 0 15px 220px;
-
 }
 .botonIniciar:hover{
     background-color: #38546d;
@@ -106,8 +109,6 @@ main{
     border-radius: 20px;
     transition: 1s all;
     cursor: pointer;
-    
-    margin: 15px 0 15px 200px;
 }
 .botonCancelar{
     width: 30%;
@@ -121,8 +122,6 @@ main{
     border-color: #183036;
     transition: 1s all;
     cursor: pointer;
-    margin: 15px 0 15px 110px;
-
 }
 .botonGuardar:hover{
     background-color: #38546d;
@@ -149,8 +148,6 @@ main{
     border-radius: 20px;
     transition: 1s all;
     cursor: pointer;
-    
-    margin: 15px 0 15px 200px;
 }
 .botonRendirse{
     width: 30%;
@@ -164,8 +161,6 @@ main{
     border-color: #183036;
     transition: 1s all;
     cursor: pointer;
-    margin: 15px 0 15px 110px;
-
 }
 .botonJugarAgain:hover{
     background-color: #38546d;
@@ -195,68 +190,138 @@ footer{
 }
 
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:767px) {
 
-    .contenidoElementos{
-        height: 1150px;
+    #logoEncabezado{
+        margin-top: 10%;
+
     }
-    .panelDerecho, .panelDerecho, .botones{
-        display: block;
-        width: auto;
+    #menuPrincipal, #agregandoPalabra, #dibujoAhorcado{
+        height: 84vh;
     }
-    .panelDerecho, .panelIzquierdo{
-        width: 100%;
-        height: 400px;
-    
-        position: relative;
-        margin: 10% 0;
+    .botonesMenuPrincipal{
+        margin-top: 50%;
+        height: 40%;
     }
-    .botonEncriptar, .botonDesencriptar, .requisitosTexto{
-        display: block;
-        margin: 5%;
-        width: 100%;
+    .botonIniciar, .botonAgregar{
+        width: 80%;
+        height: 8vh;
+        font-size: 1.4rem;
     }
-    #imagenMostrarMensaje{
-        display: none;
+
+
+    #textAreaAgregarPalabra{
+        margin: 15% 3%;
+        font-size: .8rem;
+        width: 90vw;
+        height: 30vh;
     }
-    #textAreaMostrarMensaje{
-        margin: 0 10%;
+    .requisitos{
+        margin: 5% 10%;
+        font-size: 1.3rem;
+    }
+    .botonesAgregandoPalabra{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10%;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 30%;
+    }
+    .botonGuardar, .botonCancelar{
+        height: 8vh;
+        width: 80%;
+        font-size: 1.4rem;
+    }
+
+
+    #horca{
+        margin-top: 15%;
+        width: 99%;
+        height: 50%;
+    }
+    .botones{
+        margin-top: 10%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 30%;
+    }
+    .botonNuevoJuego, .botonRendirse{
+        height: 8vh;
+        width: 80%;
+        font-size: 1.4rem;
+    }
+    footer{
+        height: 2.6vh;
+    }
+    .copyright{
+        font-size: 1.1rem;
+        padding-top: .5%;
     }
 }
-@media screen and (min-width: 481px) and (max-width:900px) {
+@media screen and (min-width: 768px) and (max-width:1023px) {
 
-    .contenidoElementos{
-        height: 1250px;
+    header{
+        height: 5vh;
     }
-    .panelDerecho, .panelDerecho, .botones{
-        display: block;
-        width: 90%;
+    #logoEncabezado{
+        margin-top: 40%;
+
     }
-    .panelDerecho, .panelIzquierdo{
-        width: 100%;
-        height: 400px;
-    
-        position: relative;
-        margin: 10% 0;
+    #menuPrincipal, #agregandoPalabra, #dibujoAhorcado{
+        height: 84.7vh;
     }
-    .requisitosTexto{
-        margin: 2% 5%;
-        width: 10% 40%;
-        display: block;
+    .botonesMenuPrincipal{
+        margin-top: 40%;
+        height: 30%;
     }
-    .botonEncriptar, .botonDesencriptar{
-        display: inline-block;
-        margin: 0 5%;
-        width: 35%;
+    .botonIniciar, .botonAgregar{
+        height: 8vh;
+        font-size: 1.4rem;
     }
-    .elementosNoEncontrado{
+
+
+    #textAreaAgregarPalabra{
+        margin: 15% 3%;
+        font-size: 1.7rem;
+    }
+    .requisitos{
+        margin: 5% 10%;
+        font-size: 1.6rem;
+    }
+    .botonesAgregandoPalabra{
+        display: flex;
+        margin-top: 10%;
+        justify-content: space-evenly;
+    }
+    .botonGuardar, .botonCancelar{
+        height: 8vh;
+        font-size: 1.4rem;
+    }
+
+
+    #horca{
+        margin-top: 15%;
         width: 99%;
+        height: 50%;
     }
-    #imagenMostrarMensaje{
-        display: none;
+    .botones{
+        margin-top: 10%;
+        display: flex;
+        justify-content: space-evenly;
     }
-    #textAreaMostrarMensaje{
-        margin: 0 10%;
-        padding: 2%;
+    .botonNuevoJuego, .botonRendirse{
+        height: 8vh;
+        font-size: 1.4rem;
+    }
+    footer{
+        height: 2.7vh;
+        width: auto;
+    }
+    .copyright{
+        font-size: 1.3rem;
+        padding-top: .5%;
     }
 }
