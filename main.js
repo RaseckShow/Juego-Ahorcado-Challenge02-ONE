@@ -1,56 +1,109 @@
 let palabrasAgregadas = ["HTML", "CSS", "CODE", "DEV", "ORACLE"];
 let palabraSeleccionada = "";
-let palabra = document.getElementById("textAreaMensaje");
+let palabra = document.getElementById("textAreaAgregarPalabra");
 let tablero = document.getElementById("horca").getContext("2d");
 let letras = [];
-let errores = 6;
+let errores = 5;
+let letrasIncorrectas = [];
+let palabraCorrecta = "";
+let letraAcertadas = [];
+
+function ReiniciarValores() {
+    palabraSeleccionada = "";
+    letras = [];
+    errores = 5;
+    letrasIncorrectas = [];
+    palabraCorrecta = "";
+    letraAcertadas = [];
+    document.querySelector(".mensajePerdiste").style.display = "none";
+    document.querySelector(".mensajeGanaste").style.display = "none";
+    document.querySelector(".botonRendirse").style.display = "inline";
+}
 function IniciarJuego()
 {
-    errores = 6;
+    ReiniciarValores();
     AlternarElementosNuevoJuego();
     SeleccionarPalabra();
     DibujarCanvas();
     DibujarGuiones();
 
-    document.onkeydown = (e) => {
+    document.onkeyup = (e) => {
         let letra = e.key.toUpperCase();
-        if(ComprobarLetras(letra) && palabraSeleccionada.includes(letra))
-        {
-            for(let i = 0; i<palabraSeleccionada.length; i++)
-            {
-                if(palabraSeleccionada[i] == letra)
-                {
-                    EscribirLetraCorrecta(i);
+        if (document.getElementById("dibujoAhorcado").style.display != "none") {
+            if (errores >= 0) {
+                if (!verificarLetraClicada(e.key) && verificarLetra(e.keyCode)) {
+                    if (palabraSeleccionada.includes(letra)) {
+                        adicionarLetraCorrecta(palabraSeleccionada.indexOf(letra))
+                        for (let i = 0; i < palabraSeleccionada.length; i++) {
+                            if (palabraSeleccionada[i] === letra) {
+                                EscribirLetraCorrecta(i);
+                                verificarVencedor(letra);
+                            }
+                        }
+                    }
+                // si el usuario cometió más errores de los que son permitidos, 
+                //llama las funciones que dibujan el ahorcado y exibe el mensaje de fin de juego
+                    else {
+                        console.log(errores);
+                        if (!verificarLetraClicada(e.key) && !verificarVencedor(letra)) return
+                        DibujarMuñeco(errores)
+                        verificarFinJuego(letra)
+                    }
                 }
             }
+            else {
+                alert('Excediste el limite de letras incorrectas');
+            } 
         }
-        else
-        {
-            MostrarLetraIncorrecta(letra);
-            EscribirLetraIncorrecta(letra, errores);
-            DibujarMuñeco();
-        }
+    };
+}
+function adicionarLetraCorrecta(i) {
+    palabraCorrecta += palabraSeleccionada[i].toUpperCase()
+}
+//Verifica si el usuario ha ganado
+function verificarVencedor(letra) {
+    letraAcertadas.push(letra.toUpperCase());
+    if (letraAcertadas.length == palabraSeleccionada.length) {
+        ganaste();
     }
 }
+function verificarFinJuego(letra) {
+    //checa si la letra ha sido incluída en el array de  las letras correctas o incorrectas
+    if(letraAcertadas.length < palabraSeleccionada.length) { 
+        //incluye las letras ya digitadas en el array
+        letrasIncorrectas.push(letra);
+        MostrarLetraIncorrecta();
+        //valida se el usuário cometió el numero maximo de errores
+        // if (letrasIncorrectas.length > errores) {
+        if (errores < 0) {
+            perdiste();
+        }
+        else if(letraAcertadas.length < palabraSeleccionada.length) {
+            // MostrarLetraIncorrecta(letra);
+            EscribirLetraIncorrecta(letra, errores)
+        }
+    }
+} 
 function MostrarLetraIncorrecta()
 {
     errores -= 1;
-    console.log(errores);
 }
-function ComprobarLetras(key)
-{
-    let estado = false;
-    if((key >= 65 && letras.indexOf(key)) || (key <= 90 && letras.indexOf(key)))
-    {
-        letras.push(key);
-        console.log(key);
-        return estado;
+// Verifica que la tecla oprimida sea una letra
+function verificarLetra(keyCode) {
+    if (typeof keyCode === "number" && ((keyCode >= 65 && keyCode <= 90) || keyCode == 192)) {
+        return true;
+    } else {
+        return false;
     }
-    else
-    {
-        estado = true;
-        console.log(key);
-        return estado;
+}
+// Verifica si la letra ya fue presionada anteriormente 
+function verificarLetraClicada(key) {
+    if (letras.length < 1 || letras.indexOf(key) < 0) {
+        letras.push(key);
+        return false; 
+    }
+    else {
+        return true;
     }
 }
 function AgregarPalabra()
@@ -61,35 +114,53 @@ function SeleccionarPalabra()
 {
     let palabraSecreta = palabrasAgregadas[Math.floor(Math.random() * palabrasAgregadas.length)];
     palabraSeleccionada = palabraSecreta;
-    console.log(palabraSeleccionada)
 }
 function AlternarElementosNuevoJuego()
 {
     document.getElementById("menuPrincipal").style.display = "none";
-    document.getElementById("horca").style.display = "block";
-    document.getElementById("btnNuevoJuego").style.display = "inline";
-    document.getElementById("btnRendirse").style.display = "inline";
+    document.getElementById("dibujoAhorcado").style.display = "block";
     document.getElementById("agregandoPalabra").style.display = "none";
-
 }
 function MenuPrincipal() 
 {
-    document.getElementById("menuPrincipal").style.margin = "20px 50px";
-    document.getElementById("menuPrincipal").style.padding = "100px 150px";
-    document.getElementById("menuPrincipal").style.display = "inline";
-    document.getElementById("horca").style.display = "none";
-    document.getElementById("btnNuevoJuego").style.display = "none";
-    document.getElementById("btnRendirse").style.display = "none";
+    document.getElementById("menuPrincipal").style.display = "block";
+    document.getElementById("agregandoPalabra").style.display = "none";
 }
 function AlternarElementosNuevaPalabra()
 {
     document.getElementById("menuPrincipal").style.display = "none";
     document.getElementById("agregandoPalabra").style.display ="block";
+    document.getElementById("dibujoAhorcado").style.display = "none";
+
 }
 function GuardarYJugar()
 {
-    let palabraAgregada = document.getElementById("textAreaAgregarPalabra").value.toUpperCase();
-    palabrasAgregadas.push(palabraAgregada);
-    console.log(palabrasAgregadas);
-    IniciarJuego();
+    let regexPalabra = /^[a-zA-Z]+/;
+    let palabraAgregada = palabra.value.toUpperCase();
+    let palabraValida = regexPalabra.test(palabraAgregada);
+
+    if (palabraValida) {
+        palabrasAgregadas.push(palabraAgregada);
+        palabra.value = "";
+        IniciarJuego();
+    }else{
+        alert("Por favor, ingrese una palabra valida u oprima cancelar!");
+    }
+}
+function perdiste() {
+    document.querySelector(".mensajePerdiste").style.display = "block";
+}
+function ganaste() {
+    document.querySelector(".mensajeGanaste").style.display = "block";
+    document.querySelector(".botonRendirse").style.display = "none";
+}  
+function AlternarElementosMenuPrincipal() {
+    document.getElementById("menuPrincipal").style.display = "block";
+    document.getElementById("dibujoAhorcado").style.display ="none";
+    document.getElementById("agregandoPalabra").style.display ="none";
+}
+function Rendirse() {
+    alert("La palabra que no pudiste resolver era: " + palabraSeleccionada);
+    AlternarElementosMenuPrincipal();
+    MenuPrincipal();
 }

@@ -16,35 +16,38 @@
     <body>
         <header>
             <div class="logo">
-                <img src="imagenes/logoBlanco.png" alt="logo Alura" id="logoEncabezado">
+                <img src="imagenes/logoAlura.png" alt="logo Alura" id="logoEncabezado">
             </div>
         </header>
         
         <main>
             <section id="menuPrincipal">
-                <a href="#horca"></a>
-                <a href="#agregandoPalabra"></a>
-                <input type="submit"  id="btnIniciar" value="Iniciar Juego" class="botonIniciar" onclick="IniciarJuego()">
-                <input type="submit" id="btnAgregar" value="Agregar Palabra" class="botonAgregar"onclick="AgregarPalabra()">
-                
-            </section>
-            <section class="dibujoAhorcado">
-                <canvas id="horca" width="1160" height="300"></canvas>
-                <div class="botones">
-                    <input type="submit"  id="btnNuevoJuego" value="Nuevo Juego" class="botonNuevoJuego" onclick="IniciarJuego()">
-                    <input type="submit" id="btnRendirse" value="Rendirse" class="botonRendirse"onclick="MenuPrincipal()">
+                <div class="botonesMenuPrincipal">
+                    <input type="submit"  id="btnIniciar" value="Iniciar Juego" class="botonIniciar" onclick="IniciarJuego()">
+                    <input type="submit" id="btnAgregar" value="Agregar Palabra" class="botonAgregar"onclick="AgregarPalabra()">
                 </div>
             </section>
+            
+            <section class="dibujoAhorcado" id="dibujoAhorcado">
+                <canvas id="horca" width="1160" height="300"></canvas>
+                <span class="mensajePerdiste"><label for="">Perdiste, fin del juego!</label></span>
+                <span class="mensajeGanaste"><label for="">Felicidades, ganaste!</label></span>
+                <div class="botones">
+                    <input type="submit"  id="btnNuevoJuego" value="Nuevo Juego" class="botonNuevoJuego" onclick="IniciarJuego()">
+                    <input type="submit" id="btnRendirse" value="Rendirse" class="botonRendirse"onclick="Rendirse()">
+                </div>
+            </section>
+
             <section id="agregandoPalabra" class="mainAgregarPalabra">
                 <section class="agregarPalabra">
-                    <textarea name="palabraAAgregar" id="textAreaAgregarPalabra" cols="50" rows="10" placeholder="Ingrese una palabra..." autofocus></textarea>
+                    <textarea name="palabraAAgregar" id="textAreaAgregarPalabra" cols="50" rows="10" placeholder="Ingresa una palabra..." maxlength="8" autofocus></textarea>
                     <div class="requisitos">
                         <ul>
-                            <li><img src="imagenes/simboloAdvertencia.png" alt=""><label for="">No se admiten minusculas, numeros, acentos y/o caracteres especiales</label></li>
+                            <li><img src="imagenes/simboloAdvertencia.png" alt=""><label for="">No se admiten numeros, acentos y/o caracteres especiales</label></li>
                             <li><img src="imagenes/simboloAdvertencia.png" alt=""><label for="">Maximo 8 Letras</label></li>
                         </ul>  
                     </div>                
-            </section>                
+                </section>                
                 <input  id="btnGuardar" type="button" value="Guardar y Jugar" class="botonGuardar" onclick="GuardarYJugar()">
                 <input id="btnCancelar" type="button" value="Cancelar" class="botonCancelar" onclick="MenuPrincipal()">
             </section>

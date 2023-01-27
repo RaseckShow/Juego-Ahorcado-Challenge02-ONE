@@ -3,8 +3,8 @@ function DibujarCanvas()
     tablero.lineWidth = 5;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
-    tablero.fillStyle = "#F3F5F6";
-    tablero.strokeStyle = "#8A3871";
+    tablero.fillStyle = "#7BC3F5";
+    tablero.strokeStyle = "#1B2A36";
 
     tablero.fillRect(0,0,1160,300);
     tablero.beginPath();
@@ -36,8 +36,8 @@ function DibujarGuiones()
     tablero.lineWidth = 3;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
-    tablero.fillStyle = "#F3F5F6";
-    tablero.strokeStyle = "#8A3871";
+    tablero.fillStyle = "#7BC3F5";
+    tablero.strokeStyle = "#1B2A36";
 
     let ancho = 400/palabraSeleccionada.length;
     for(let i = 0; i < palabraSeleccionada.length; i++)
@@ -54,7 +54,7 @@ function EscribirLetraCorrecta(index)
     tablero.lineWidth = 3;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
-    tablero.fillStyle = "#8A3871";
+    tablero.fillStyle = "#1B2A36";
 
     let ancho = 400 / palabraSeleccionada.length;
     tablero.fillText(palabraSeleccionada[index], 410 + (ancho * index), 240);
@@ -66,9 +66,8 @@ function EscribirLetraIncorrecta(letra, errorsLeft)
     tablero.lineWidth = 1;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
-    tablero.fillStyle = "#8A3871";
+    tablero.fillStyle = "#1B2A36";
 
-    let ancho = 400 / palabraSeleccionada.length;
     tablero.fillText(letra, 280 + (40 * (10 - errorsLeft)), 290, 40);
     tablero.stroke();
 }
@@ -80,7 +79,7 @@ function DibujarMuñeco()
                 tablero.lineCap = "round";
                 tablero.lineJoin = "round";
                 tablero.fillStyle = "#F3F5F6";
-                tablero.strokeStyle = "#8A3871";
+                tablero.strokeStyle = "#1B2A36";
             
                 tablero.beginPath();
                 tablero.arc(620,70,20,0,(2 * 3.14));
@@ -91,7 +90,7 @@ function DibujarMuñeco()
                 tablero.lineCap = "round";
                 tablero.lineJoin = "round";
                 tablero.fillStyle = "#F3F5F6";
-                tablero.strokeStyle = "#8A3871";
+                tablero.strokeStyle = "#1B2A36";
         
                 tablero.beginPath();
                 tablero.moveTo(620,90);
@@ -103,7 +102,7 @@ function DibujarMuñeco()
                 tablero.lineCap = "round";
                 tablero.lineJoin = "round";
                 tablero.fillStyle = "#F3F5F6";
-                tablero.strokeStyle = "#8A3871";
+                tablero.strokeStyle = "#1B2A36";
     
                 tablero.beginPath();
                 tablero.moveTo(620,150);
@@ -115,7 +114,7 @@ function DibujarMuñeco()
                 tablero.lineCap = "round";
                 tablero.lineJoin = "round";
                 tablero.fillStyle = "#F3F5F6";
-                tablero.strokeStyle = "#8A3871";
+                tablero.strokeStyle = "#1B2A36";
         
                 tablero.beginPath();
                 tablero.moveTo(620,150);
@@ -127,7 +126,7 @@ function DibujarMuñeco()
                 tablero.lineCap = "round";
                 tablero.lineJoin = "round";
                 tablero.fillStyle = "#F3F5F6";
-                tablero.strokeStyle = "#8A3871";
+                tablero.strokeStyle = "#1B2A36";
         
                 tablero.beginPath();
                 tablero.moveTo(620,100);
@@ -139,7 +138,7 @@ function DibujarMuñeco()
                 tablero.lineCap = "round";
                 tablero.lineJoin = "round";
                 tablero.fillStyle = "#F3F5F6";
-                tablero.strokeStyle = "#8A3871";
+                tablero.strokeStyle = "#1B2A36";
 
                 tablero.beginPath();
                 tablero.moveTo(620,100);
@@ -177,3 +176,4 @@ function DibujarMuñeco()
             break;            
     }    
 }
+
